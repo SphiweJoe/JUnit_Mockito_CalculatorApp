@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="calculator-container">
+    <h1>Expression Calculator</h1>
+
+    <form action="/calculate" method="get">
+        <label for="expression">Expression:</label>
+        <input type="text" id="expression" name="expression" required placeholder="Enter an expression like (-2--8)*(12/4)">
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div class="result">
+        <h2>Result:</h2>
+        <p th:if="${result != null}" th:text="'Result: ' + ${result}"></p>
+        <p th:if="${error != null}" th:text="'Error: ' + ${error}"></p>
+    </div>
+</div>
+</body>
+</html>
